@@ -7,5 +7,3 @@ Upon cloning this project run `npm install` to install the packages.
 ## How To Install
 
 ## Commands
-[ ] ping
-[ ] hello
