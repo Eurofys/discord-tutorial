@@ -47,6 +47,8 @@ You can find your client ID at `General Information`
 Before you are able to start the bot, you would need to add some code. Copy paste the following into your `index.js`
 
 ```JS
+'use strict';
+
 // Defining Discord and including the Discord.js module
 const Discord = require('discord.js');
 const client = new Discord.Client({
