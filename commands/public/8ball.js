@@ -33,10 +33,6 @@ module.exports = {
         message.channel.send({
             embed: {
                 color: 0x0099ff,
-                title: '8ball Game',
-                author: {
-                    name: message.author.username,
-                },
                 description: `🎱 <@${message.author.id}> ${eightballArray[answer]}`,
             }
         });
