@@ -2,6 +2,7 @@
 
 module.exports = {
     name: 'ping',
+
     description: 'returns a message with a response time',
     execute: async function (client, message){
    //     await message.channel.send(`🏓 Pong - ${Math.floor(client.ws.ping).toLocaleString()} milliseconds`);
