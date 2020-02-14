@@ -11,7 +11,9 @@ const client = new Discord.Client({
         'REACTION'
     ]
 });
+
 client.commands = new Discord.Collection();
+
 const fs = require('fs');
 
 try {
@@ -37,12 +39,6 @@ client.on('ready', async () => {
     console.log('\x1b[32mBot has succesfully signed in and is listening to events\x1b[0m');
 });
 
-// Request permissions to sign in the bot with Discord
-dotenv.config();
-client.login(process.env.API_TOKEN).then(() => {
-    console.log('\x1b[33mBot is trying to sign in\x1b[0m');
-}).catch(() => console.error('Api-token is invalid'));
-
 client.on('message', async (message) => {    
     let prefix = '!';
 
@@ -60,3 +56,8 @@ client.on('message', async (message) => {
     }
 });
 
+// Request permissions to sign in the bot with Discord
+dotenv.config();
+client.login(process.env.API_TOKEN).then(() => {
+    console.log('\x1b[33mBot is trying to sign in\x1b[0m');
+}).catch(() => console.error('Api-token is invalid'));
