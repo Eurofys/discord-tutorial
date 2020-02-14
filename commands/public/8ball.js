@@ -29,7 +29,6 @@ module.exports = {
 
         let answer = Math.floor(Math.random() * eightballArray.length);
         
-
         message.channel.send({
             embed: {
                 color: 0x0099ff,
