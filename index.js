@@ -16,6 +16,6 @@ client.on('ready', async () => {
 });
 
 // Request permissions to sign in the bot with Discord
-client.login('Njc3OTQ5Nzc5NDM4NzMxMjY0.Xkbsew.DH_Q0aTfVIXtCxbDjz5wwj4k_U4').then(() => {
+client.login('Njc3OTQ5Nzc5NDM4NzMxMjY0.XkbuzQ.ZAx33r8nZnHxzlFPvgmDS_wNxiA').then(() => {
     console.log('\x1b[33mBot is trying to sign in\x1b[0m')
 }).catch(() => console.error('Api-token is invalid'));
