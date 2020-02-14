@@ -1,11 +1,9 @@
 'use strict';
 
-// Defining Discord and including the Discord.js module
-const Discord = require('discord.js');
 const dotenv = require('dotenv');
-dotenv.config();
 
 // Defining Discord and including the Discord.js module
+const Discord = require('discord.js');
 const client = new Discord.Client({
     partials: [
         'MESSAGE',
@@ -15,6 +13,7 @@ const client = new Discord.Client({
 });
 
 client.commands = new Discord.Collection();
+
 const fs = require('fs');
 
 try {
@@ -35,30 +34,30 @@ try {
     console.error(e);
 }
 
-
-
-// Verify login
-client.on('ready', () => {
-    console.log('\x1b[32mBot has succesfully signed in and is listening to events\x1b[0m')
+// Verify login and a steady connection to Discord their API
+client.on('ready', async () => {
+    console.log('\x1b[32mBot has succesfully signed in and is listening to events\x1b[0m');
 });
 
-// Request permissions to sign in the bot with Discord
-client.login(process.env.DISCORD_API_KEY).then(() => {
-    console.log('\x1b[33mBot is trying to sign in\x1b[0m')
-}).catch(() => console.error('Something is wrong'));
-
-// Message - Whenever a message has been send
-client.on('message', async (message) => {
+client.on('message', async (message) => {    
     let prefix = '!';
 
     if(!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+
     if (!client.commands.has(command)) return;
+
     try {
         client.commands.get(command).execute(client, message, args);
     } catch (error) {
         console.error(error);
     }
 });
+
+// Request permissions to sign in the bot with Discord
+dotenv.config();
+client.login(process.env.API_TOKEN).then(() => {
+    console.log('\x1b[33mBot is trying to sign in\x1b[0m');
+}).catch(() => console.error('Api-token is invalid'));
