@@ -24,7 +24,7 @@ After that you want to `clone` the repository to your computer.
 2. Right-click in the created folder and click on `Git Bash Here`
 3. Type `git clone https://github.com/[YOUR_USERNAME_HERE]/discord-tutorial.git`
 4. Navigate in the folder by typing `cd discord-tutorial`
-5. Copy paste the following into your Git Bash window `git remote add upstream https://github.com/exqlusive/discord-tutorial.git master`
+5. Copy paste the following into your Git Bash window `git remote add upstream https://github.com/exqlusive/discord-tutorial.git`
 
 ### Installing Project Packages
 1. Type `npm install` in your Git Bash window
